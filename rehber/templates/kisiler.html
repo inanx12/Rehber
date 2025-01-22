@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kişiler</title>
+    <title>Kişi Güncelle</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/kisiler.css') }}">
+    <body style="background-image: url('{{ url_for('static', filename='image/background.jpeg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+</head>
+<body>
+    <h1>Kişiler</h1>
+
+    <!-- Arama ve Filtreleme Formu -->
+    <form method="get" action="/kisilerim" style="margin-bottom: 20px;">
+        <input type="text" name="q" placeholder="Genel Arama..." value="{{ request.args.get('q', '') }}">
+        <select name="filter_field">
+            <option value="">Filtre Kriteri Seçin</option>
+            <option value="ad_soyad" {% if request.args.get('filter_field') == 'ad_soyad' %}selected{% endif %}>Ad Soyad</option>
+            <option value="eposta" {% if request.args.get('filter_field') == 'eposta' %}selected{% endif %}>E-posta</option>
+            <option value="telefon" {% if request.args.get('filter_field') == 'telefon' %}selected{% endif %}>Telefon</option>
+            <option value="unvan" {% if request.args.get('filter_field') == 'unvan' %}selected{% endif %}>Unvan</option>
+            <option value="birim_id" {% if request.args.get('filter_field') == 'birim_id' %}selected{% endif %}>Birim ID</option>
+        </select>
+        <button type="submit">Ara</button>
+    </form>
+
+    <!-- Kişi Listesi -->
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Ad Soyad</th>
+            <th>Eposta</th>
+            <th>Telefon</th>
+            <th>Unvan</th>
+            <th>Açıklama</th>
+            <th>İşlemler</th>
+        </tr>
+        {% for kisi in kisiler %}
+        <tr>
+            <td>{{ kisi.id }}</td>
+            <td>{{ kisi.ad_soyad }}</td>
+            <td>{{ kisi.eposta }}</td>
+            <td>{{ kisi.telefon }}</td>
+            <td>{{ kisi.unvan }}</td>
+            <td>{{ kisi.aciklama }}</td>
+            <td>
+                <!-- Düzenle Butonu -->
+                <a href="/kisi_guncelle/{{ kisi.id }}">Düzenle</a>
+
+                <!-- Sil Formu -->
+                <form action="/kisi_sil" method="post" style="display:inline;">
+                    <input type="hidden" name="id" value="{{ kisi.id }}">
+                    <button type="submit" onclick="return confirm('Bu kişiyi silmek istediğinizden emin misiniz?')">Sil</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Geri Dön</a>
+</body>
+</html>

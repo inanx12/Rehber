@@ -1,0 +1,93 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Kaydırmayı engeller */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #70c8d3;
+    background-image: url('static/image/background.jpeg'); /* Arka plan resmi */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ortada hizalar */
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px; /* Başlık ile form arasına boşluk ekler */
+}
+
+form {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf arka plan */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 90%;
+    max-width: 400px; /* Maksimum genişlik */
+    height: auto; /* Dinamik yükseklik */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Padding ve border'ı dahil eder */
+    overflow-y: auto; /* Form içeriğini taşırmaz */
+}
+
+form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+form input[type="text"], 
+form input[type="number"],
+form textarea, 
+form select {
+    padding: 6px;
+    height: 35px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: none; /* Yeniden boyutlandırmayı engeller */
+    height: 200px; /* Daha büyük açıklama alanı */
+    padding: 10px; /* İçerik alanını büyütür */
+    font-size: 1rem; /* Yazı boyutunu büyütür */
+}
+
+form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    align-self: center; /* Butonu ortalar */
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 0.85rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}

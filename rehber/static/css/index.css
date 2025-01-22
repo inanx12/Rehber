@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background: linear-gradient(rgb(136, 136, 242), white);
+    text-align: center;
+    text-decoration: none !important;
+}
+
+h1 {
+    color: rgb(136, 136, 242);padding-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+ul li {
+    margin: 0 35px;
+    padding: 50px 10px 10px 10px;
+}
+
+ul li a {
+    background-color: rgb(136, 136, 242);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px; 
+}
+
+ul li a:hover {
+    background-color: rgb(136, 136, 242);
+}

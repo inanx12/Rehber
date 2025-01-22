@@ -1,0 +1,22 @@
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehber</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <body style="background-image: url('{{ url_for('static', filename='image/background.jpeg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+</head>
+<body>
+    <h1>Rehber Uygulamasına Hoş Geldiniz</h1>
+    <ul>
+        <li class="kisilerim"><a href="/kisilerim">Kişilerim</a></li>
+        <li class="kisi-ekle"><a href="/kisi_ekle">Kişi Ekle</a></li>
+        <li class="rehberi-indir"><a href="/rehberi_indir">Rehberi İndir</a></li>
+    </ul>
+
+    <img src="{{ url_for('static', filename='image/rehberprofil.png') }}" alt="Alt kısım resmi" style="width: 30%; height: auto;">
+
+</body>
+</html>

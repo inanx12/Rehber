@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kişi Güncelle</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/kisi_guncelle.css') }}">
+    <body style="background-image: url('{{ url_for('static', filename='image/background.jpeg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+</head>
+<body>
+    <h1>Kişi Güncelle</h1>
+    <form method="POST" action="/kisi_guncelle/{{ kisi.id }}">
+        <label>Ad Soyad:</label><br>
+        <input type="text" name="ad_soyad" value="{{ kisi.ad_soyad }}" required><br>
+        <label>Eposta:</label><br>
+        <input type="email" name="eposta" value="{{ kisi.eposta }}" required><br>
+        <label>Telefon:</label><br>
+        <input type="text" name="telefon" value="{{ kisi.telefon }}" required><br>
+        <label>Unvan:</label><br>
+        <input type="text" name="unvan" value="{{ kisi.unvan }}"><br>
+        <label>Açıklama:</label><br>
+        <textarea name="aciklama">{{ kisi.aciklama }}</textarea><br>
+        <button type="submit">Güncelle</button>
+    </form>
+    <a href="/">Geri Dön</a>
+</body>
+</html>
