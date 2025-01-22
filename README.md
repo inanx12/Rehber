@@ -1,2 +1,1 @@
-# Rehber
-rehber projem
+# Rehber Projemin dosyalarına "Rehber" klasöründen erişebilirsiniz.
